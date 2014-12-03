@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Fingerprint | Tappy</title>
+  <link rel="stylesheet" href="main.css">
+  <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png">
+  <link rel="icon" type="image/png" href="/favicon-192x192.png" sizes="192x192">
+  <link rel="icon" type="image/png" href="/favicon-160x160.png" sizes="160x160">
+  <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+  <meta name="msapplication-TileColor" content="#03a9f4">
+  <meta name="msapplication-TileImage" content="/mstile-144x144.png">
+  <link href='http://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.min.css">
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/webfont/1.5.6/webfont.js"></script>
+</head>
+<body>
+  <h1>Fingerprint</h1>
+  <p>This is an in-browser keyboard dynamics demo using <a href="http://tappy.pw">Tappy</a>.</p>
+
+  <h2>Instructions</h2>
+  <p>Think of a word that you type often; perhaps a common <span class="infotip" data-info="The input doesn't hide what you're typing. Try to avoid showing people your password.">username</span>. Type it into the <span class="fa-line-chart"> training</span> input, then hit enter. For best results, train the same word a few times.</p>
+  <p>Once you're ready, type the same word into the <span class="fa-lock"> verification</span> field.</p>
+
+  <label class="fa-line-chart">
+    <input id="trainer" type="text">
+  </label>
+  <label class="fa-lock">
+    <input id="tester" type="text">
+  </label>
+  <p id="message">Start typing in <span class="fa-line-chart"></span> to begin!</p>
+
+  <script src="//cdn.jsdelivr.net/tappy/latest/mainfile"></script>
+  <script>
+    // balance-text (hopefully he accepts my pull-request soon...)
+    !function(a,b){"use strict";var c=function(a,b,c){var d;return function(){function g(){c||a.apply(e,f),d=null}var e=this,f=arguments;d?clearTimeout(d):c&&a.apply(e,f),d=setTimeout(g,b||100)}};jQuery.fn[b]=function(a){return a?this.bind("resize",c(a)):this.trigger(b)}}(jQuery,"smartresize"),function(a){"use strict";function d(){this.reset()}function k(){a(".balance-text").balanceText()}var b=document.documentElement.style,c=b.textWrap||b.WebkitTextWrap||b.MozTextWrap||b.MsTextWrap||b.OTextWrap;d.prototype.reset=function(){this.index=0,this.width=0};var e=function(a,b){for(var e,c=/\s(?![^<]*>)/g,d=[];null!==(e=c.exec(a));)d.push(e.index);return-1!==d.indexOf(b)},f=function(b){b.find('br[data-owner="balance-text"]').replaceWith(" ");var c=b.find('span[data-owner="balance-text"]');if(c.length>0){var d="";c.each(function(){d+=a(this).text(),a(this).remove()}),b.html(d)}},g=function(a){return b=a.get(0).currentStyle||window.getComputedStyle(a.get(0),null),"justify"===b.textAlign},h=function(b,c,d){c=a.trim(c);var e=c.split(" ").length;if(c+=" ",2>e)return c;var f=a("<span></span>").html(c);b.append(f);var g=f.width();f.remove();var h=Math.floor((d-g)/(e-1));return f.css("word-spacing",h+"px").attr("data-owner","balance-text"),a("<div></div>").append(f).html()},i=function(a,b){return 0===b||b===a.length||e(a,b-1)&&!e(a,b)},j=function(a,b,c,d,e,f,g){for(var h;;){for(;!i(b,f);)f+=e;if(a.html(b.substr(0,f)),h=a.width(),0>e?d>=h||0>=h||0===f:h>=d||h>=c||f===b.length)break;f+=e}g.index=f,g.width=h};a.fn.balanceText=function(){return c?this:this.each(function(){var b=a(this),c=5e3;f(b);var e="";b.attr("style")&&b.attr("style").indexOf("line-height")>=0&&(e=b.css("line-height")),b.css("line-height","normal");var i=b.width(),k=b.height(),l=b.css("white-space"),m=b.css("float"),n=b.css("display"),o=b.css("position");b.css({"white-space":"nowrap","float":"none",display:"inline",position:"static"});var p=b.width(),q=b.height(),r="pre-wrap"===l?0:q/4;if(i>0&&p>i&&c>p){for(var s=b.html(),t="",u="",v=g(b),w=Math.round(k/q),x=w;x>1;){var y=Math.round((p+r)/x-r),z=Math.round((s.length+1)/x)-1,A=new d;j(b,s,i,y,-1,z,A);var B=new d;z=A.index,j(b,s,i,y,1,z,B),A.reset(),z=B.index,j(b,s,i,y,-1,z,A);var C;C=0===A.index?B.index:i<B.width||A.index===B.index?A.index:Math.abs(y-A.width)<Math.abs(B.width-y)?A.index:B.index,u=s.substr(0,C),v?t+=h(b,u,i):(t+=u.replace(/\s$/,""),t+='<br data-owner="balance-text" />'),s=s.substr(C),x--,b.html(s),p=b.width()}v?b.html(t+h(b,s,i)):b.html(t+s)}b.css({position:o,display:n,"float":m,"white-space":l,"line-height":e})})},a(window).ready(k),a(window).smartresize(k)}(jQuery);
+
+    function balanceP () {
+      $('p').balanceText();
+    }
+
+    WebFont.load({
+      google: {
+        families: ['Montserrat']
+      },
+      active: function () {
+        balanceP();
+        $(window).smartresize(balanceP);
+      }
+    });
+
+    function tell (str) {
+      message.className = 'hidden';
+      setTimeout(function () {
+        message.textContent = str;
+        message.className = '';
+      }, 250);
+    }
+
+    function mergeTrainRhythm (e) {
+      var password = trainer.value, weight;
+      var length = trainRhythm.length;
+
+      if (length === 1) tell('Try something that\'s longer than 1 character.');
+      else if (length !== password.length) tell(length + '   ' + password.length);
+      else {
+        trainRhythm.done();
+
+        if (recorded[password])
+          try {
+            weight = recorded[password] = tappy.average(recorded[password], trainRhythm);
+            weight = weight._weight;
+            if (Math.floor(weight % 10) === 1) { // 10 to 19
+              weight += 'th';
+            } else {
+              // check last digit
+              switch (weight % 10) {
+                case 1: weight += 'st'; break;
+                case 2: weight += 'nd'; break;
+                case 3: weight += 'rd'; break;
+                default: weight += 'th';
+              }
+            }
+            tell('Trained "' + password + '" for the ' + weight + ' time.');
+          } catch (e) {
+            tell('We\'re not gonna count that one.');
+          }
+        else {
+          recorded[password] = trainRhythm;
+          tell('Trained "' + password + '" for the first time.');
+        }
+      }
+
+      trainer.value = '';
+      trainRhythm = new tappy.Rhythm();
+    }
+
+    function compareTestRhythm (e) {
+      var closeness;
+      var password = tester.value;
+      var length = testRhythm.length;
+
+      if (length === 1) tell('Try something that\'s longer than 1 character.');
+      else if (length !== password.length) tell('We\'re not gonna count that one.');
+      else {
+        testRhythm.done();
+
+        if (recorded[password]) {
+          closeness = (tappy.compare(testRhythm, recorded[password], true) * 100);
+          if (closeness)
+            tell(closeness.toFixed(1) + '% match to the recorded dynamics for "' + password + '".');
+          else tell('We\'re not gonna count that one.');
+        } else tell('You must train the password "' + password + '" first.');
+      }
+
+      tester.value = '';
+      testRhythm = new tappy.Rhythm();
+    }
+
+    var trainer = document.getElementById('trainer');
+    var tester = document.getElementById('tester');
+    var message = document.getElementById('message');
+    var trainRhythm = new tappy.Rhythm();
+    var testRhythm = new tappy.Rhythm();
+    var recorded = {};
+
+    trainer.addEventListener('input', function () {
+      trainRhythm.tap();
+    }, false);
+    trainer.addEventListener('change', mergeTrainRhythm, false);
+
+    tester.addEventListener('input', function () {
+      testRhythm.tap();
+    });
+    tester.addEventListener('change', compareTestRhythm);
+
+    trainer.focus();
+
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-49939229-9', 'auto');
+    ga('require', 'displayfeatures');
+    ga('send', 'pageview');
+
+  </script>
+</body>
+</html>
