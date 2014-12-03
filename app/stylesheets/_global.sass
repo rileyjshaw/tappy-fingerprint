@@ -5,14 +5,14 @@ body
   padding: 40px 32px 96px
   border: 32px solid $cBgDark
   border-bottom-width: 0
-  font: 300 24px/1.5em 'Montserrat', sans-serif
+  font: 24px/1.5em Montserrat, sans-serif
   text-align: center
   color: $cfg
   background: $cbg
   transition: margin 0.4s, border-width 0.4s
 
-  [class^="fa"]
-    font-family: Fontawesome, 'Montserrat', sans-serif
+  [class^="fa"]::before
+    font-family: Fontawesome
 
 h1
   @extend %ir
@@ -45,7 +45,7 @@ a
       background-size: 100% 1px
 
 .infotip
-  background: repeating-radial-gradient(center center, $cfgDullest, $cfgDullest 1px, transparent 1px, transparent 100%) bottom left repeat-x
+  background: repeating-radial-gradient(center center, $cfgDullest, $cfgDullest 1px, transparent 1px, transparent 100%) left 87% repeat-x
   background-size: 3px 3px
 
   &:before
@@ -92,7 +92,7 @@ input
   padding: 0.2em 0.4em
   border: 0
   outline: 0
-  font: 300 32px 'Montserrat', sans-serif
+  font: 32px Montserrat, sans-serif
   box-shadow: 4px -4px $cBgDarkest inset
   color: $cfg
   background: $cBgDark
