@@ -16,14 +16,14 @@ body {
   padding: 40px 32px 96px;
   border: 32px solid #640676;
   border-bottom-width: 0;
-  font: 300 24px/1.5em "Montserrat", sans-serif;
+  font: 24px/1.5em Montserrat, sans-serif;
   text-align: center;
   color: #fff;
   background: #9c27b0;
   -webkit-transition: margin 0.4s, border-width 0.4s;
           transition: margin 0.4s, border-width 0.4s; }
-  body [class^="fa"] {
-    font-family: Fontawesome, "Montserrat", sans-serif; }
+  body [class^="fa"]::before {
+    font-family: Fontawesome; }
 
 h1 {
   height: 70px;
@@ -53,8 +53,8 @@ a {
       background-size: 100% 1px; }
 
 .infotip {
-  background: -webkit-repeating-radial-gradient(center center, #bc95c3, #bc95c3 1px, transparent 1px, transparent 100%) bottom left repeat-x;
-  background: repeating-radial-gradient(center center, #bc95c3, #bc95c3 1px, transparent 1px, transparent 100%) bottom left repeat-x;
+  background: -webkit-repeating-radial-gradient(center center, #bc95c3, #bc95c3 1px, transparent 1px, transparent 100%) left 87% repeat-x;
+  background: repeating-radial-gradient(center center, #bc95c3, #bc95c3 1px, transparent 1px, transparent 100%) left 87% repeat-x;
   background-size: 3px 3px; }
   .infotip:before {
     content: attr(data-info);
@@ -96,7 +96,7 @@ input {
   padding: 0.2em 0.4em;
   border: 0;
   outline: 0;
-  font: 300 32px "Montserrat", sans-serif;
+  font: 32px Montserrat, sans-serif;
   box-shadow: 4px -4px #420952 inset;
   color: #fff;
   background: #640676; }
