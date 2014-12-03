@@ -31,18 +31,22 @@ a, .infotip
   text-decoration: none
 
 a
-  background: linear-gradient($cfgDull, $cfgDull) center 0.95em no-repeat
+  background: linear-gradient($cfgDull, $cfgDull) center 87% no-repeat
   background-size: 90% 2px
   transition: background-size 0.4s
 
   &:hover
     background-size: 100% 2px
 
+  footer &
+    background-size: 90% 1px
+
+    &:hover
+      background-size: 100% 1px
+
 .infotip
-  font-family: Fontawesome, Montserrat, sans-serif
-  background: repeating-radial-gradient(center center, $cfgDullest, $cfgDullest 1px, transparent 1px, transparent 100%) repeat-x
+  background: repeating-radial-gradient(center center, $cfgDullest, $cfgDullest 1px, transparent 1px, transparent 100%) bottom left repeat-x
   background-size: 3px 3px
-  background-position: bottom left
 
   &:before
     content: attr(data-info)
@@ -62,6 +66,7 @@ a
     vertical-align: super
     font-size: 12px
     opacity: 0.75
+    font-family: Fontawesome
     transition: opacity 0.2s
 
   &:hover
