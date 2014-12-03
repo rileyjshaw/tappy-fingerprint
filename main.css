@@ -40,20 +40,22 @@ a, .infotip {
   text-decoration: none; }
 
 a {
-  background: -webkit-linear-gradient(#d7bedb, #d7bedb) center 0.95em no-repeat;
-  background: linear-gradient(#d7bedb, #d7bedb) center 0.95em no-repeat;
+  background: -webkit-linear-gradient(#d7bedb, #d7bedb) center 87% no-repeat;
+  background: linear-gradient(#d7bedb, #d7bedb) center 87% no-repeat;
   background-size: 90% 2px;
   -webkit-transition: background-size 0.4s;
           transition: background-size 0.4s; }
   a:hover {
     background-size: 100% 2px; }
+  footer a {
+    background-size: 90% 1px; }
+    footer a:hover {
+      background-size: 100% 1px; }
 
 .infotip {
-  font-family: Fontawesome, Montserrat, sans-serif;
-  background: -webkit-repeating-radial-gradient(center center, #bc95c3, #bc95c3 1px, transparent 1px, transparent 100%) repeat-x;
-  background: repeating-radial-gradient(center center, #bc95c3, #bc95c3 1px, transparent 1px, transparent 100%) repeat-x;
-  background-size: 3px 3px;
-  background-position: bottom left; }
+  background: -webkit-repeating-radial-gradient(center center, #bc95c3, #bc95c3 1px, transparent 1px, transparent 100%) bottom left repeat-x;
+  background: repeating-radial-gradient(center center, #bc95c3, #bc95c3 1px, transparent 1px, transparent 100%) bottom left repeat-x;
+  background-size: 3px 3px; }
   .infotip:before {
     content: attr(data-info);
     position: absolute;
@@ -71,6 +73,7 @@ a {
     vertical-align: super;
     font-size: 12px;
     opacity: 0.75;
+    font-family: Fontawesome;
     -webkit-transition: opacity 0.2s;
             transition: opacity 0.2s; }
   .infotip:hover::before {
