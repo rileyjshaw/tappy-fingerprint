@@ -16,7 +16,7 @@ body {
   padding: 40px 32px 96px;
   border: 32px solid #640676;
   border-bottom-width: 0;
-  font: 24px/1.5em "Montserrat", sans-serif;
+  font: 24px/1.5em Montserrat, sans-serif;
   text-align: center;
   color: #fff;
   background: #9c27b0;
@@ -96,7 +96,7 @@ input {
   padding: 0.2em 0.4em;
   border: 0;
   outline: 0;
-  font: 32px "Montserrat", sans-serif;
+  font: 32px Montserrat, sans-serif;
   box-shadow: 4px -4px #420952 inset;
   color: #fff;
   background: #640676; }
