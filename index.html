@@ -63,6 +63,7 @@
     });
 
     function tell (str) {
+      console.log(str);
       message.className = 'hidden';
       setTimeout(function () {
         message.textContent = str;
@@ -75,7 +76,7 @@
       var length = trainRhythm.length;
 
       if (length === 1) tell('Try something that\'s longer than 1 character.');
-      else if (length !== password.length) tell(length + '   ' + password.length);
+      else if (length !== password.length) tell('We\'re not gonna count that one.');
       else {
         trainRhythm.done();
 
